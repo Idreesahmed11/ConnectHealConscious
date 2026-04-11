@@ -1,16 +1,37 @@
-
-// export default MainLayout;
-import { Outlet } from "react-router-dom"; // <- ye important
+// MainLayout.jsx
+import { Outlet } from "react-router-dom";
 import TopBar from "../components/Navbar/TopBar";
 import MainNavbar from "../components/Navbar/MainNavbar";
+import Footer from "../components/Footer"; // ✅ Footer import karo
 
 const MainLayout = () => {
   return (
-    <>
+    <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
       <TopBar />
       <MainNavbar />
-      <Outlet /> {/* children ki jagah Outlet */}
-    </>
+
+      <main style={{ flex: 1 }}>
+        <Outlet /> {/* Har page yahan render hoga */}
+      </main>
+
+      {/* ✅ Footer — automatically har page ke neeche */}
+      <Footer
+        companyName="Careox"
+        bgColor="#1a1a2e"
+        textColor="#ffffff"
+        showCopyright={true}
+        links={[
+          { label: "Home",             href: "/" },
+          { label: "Store",            href: "/store" },
+          { label: "About",            href: "/About" },
+          { label: "Connect",          href: "/Connect" },
+          { label: "Terms",            href: "/terms" },
+          { label: "Privacy Policy",   href: "/privacy-policy" },
+          { label: "Refund Policy",    href: "/refund-policy" },
+          { label: "Shipping Policy",  href: "/shipping-policy" },
+        ]}
+      />
+    </div>
   );
 };
 

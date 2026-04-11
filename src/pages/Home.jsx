@@ -6,6 +6,7 @@ import InfoSection from "../components/InfoSection/InfoSection";
 import ServicesSection from "../components/ServicesSection/ServiceSection";
 import WhyCareox from "../components/WhyCareox/WhyCareox";
 import HealConsciousSection from "../components/HealConsciousSection";
+import Footer from "../components/Footer";
 
 
 const Home = () => {
@@ -18,6 +19,7 @@ const Home = () => {
       <ServicesSection/>
       <ExpertSection/>
       <HealConsciousSection/>
+    
       
     </>
   );

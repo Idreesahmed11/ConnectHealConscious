@@ -3,7 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import calendarImg from "../assets/Careox-Integrated-Printable-Page-Heal-Conscious-1536x1113.png";
 import journalImg from "../assets/careox-journal-front.png";
 import programImg from "../assets/careox-mental-health-guide-program.png";
-import paymentImg from "../assets/payment.png"; 
+
 
 const products = [
   {
@@ -29,23 +29,9 @@ const products = [
   },
 ];
 
-const quickLinks = [
-  { label: "Home", href: "/" },
-  { label: "What is Careox?", href: "/what-is-careox" },
-  { label: "Common Concerns", href: "/common-concerns" },
-  { label: "Who we are?", href: "/who-we-are" },
-  { label: "Store", href: "/store" },
-  { label: "Where we are?", href: "/where-we-are" },
-];
 
-const policies = [
-  { label: "T&C Healing Ambassador", href: "/tc-healing-ambassador" },
-  { label: "Terms of Service", href: "/terms" },
-  { label: "Refund & Returns Policy", href: "/refund-policy" },
-  { label: "Privacy Policy", href: "/privacy-policy" },
-  { label: "Healing Ambassador", href: "/healing-ambassador" },
-  { label: "Shipping Policy", href: "/shipping-policy" },
-];
+
+
 
 
 const IconCompare = () => (
@@ -237,7 +223,7 @@ function ProductCard({ product, navigate, isMobile }) {
 
 export default function HealConsciousSection() {
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
+  
   const width = useWindowWidth();
 
 
@@ -253,13 +239,7 @@ export default function HealConsciousSection() {
     : "repeat(3, 1fr)";
 
 
-  const footerColumns = isSmallMobile
-    ? "1fr"
-    : isMobile
-    ? "1fr 1fr"
-    : isTablet
-    ? "1fr 1fr"
-    : "1.2fr 1fr 1fr 1.2fr";
+
 
   return (
     <div style={{ fontFamily: "'Georgia', serif", background: "#fff" }}>
@@ -354,236 +334,7 @@ export default function HealConsciousSection() {
       </div>
 
       
-      <footer
-        style={{
-          borderTop: "0.5px solid #e0ddd8",
-          marginTop: "2.5rem",
-          padding: isMobile ? "2rem 1rem 1.25rem" : "2.5rem 1.5rem 1.5rem",
-          background: "#fff",
-        }}
-      >
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: footerColumns,
-            gap: isMobile ? "1.5rem" : "2rem",
-          }}
-        >
-          
-          <div>
-            <div
-              style={{
-                width: 28,height: 28,background: "#ddd",borderRadius: 4,marginBottom: 8,}}/>
-            <p
-              style={{fontSize: 13,fontWeight: 700,color: "#111",marginBottom: 4, }}>
-              Sign Up For Our Newsletter
-            </p>
-            <p
-              style={{fontSize: 12,color: "#777",marginBottom: 14,lineHeight: 1.6,}}
-            >
-              Get updates and offers in your inbox.
-            </p>
-            <input
-              type="email"
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              style={{
-                width: "100%",
-                padding: "8px 10px",
-                border: "0.5px solid #bbb",
-                borderRadius: 3,
-                fontSize: 12,
-                color: "#222",
-                background: "#fff",
-                outline: "none",
-                marginBottom: 8,
-                boxSizing: "border-box",
-              }}
-            />
-            <button
-              style={{
-                width: "100%",
-                padding: "9px",
-                background: "#222",
-                color: "#fff",
-                fontSize: 12,
-                fontWeight: 600,
-                border: "none",
-                borderRadius: 3,
-                cursor: "pointer",
-                letterSpacing: "0.06em",
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.background = "#444")}
-              onMouseLeave={(e) => (e.currentTarget.style.background = "#222")}
-            >
-              SUBSCRIBE
-            </button>
-          </div>
-
-          
-          <div>
-            <p
-              style={{
-                fontSize: 13,
-                fontWeight: 700,
-                color: "#111",
-                marginBottom: 14,
-              }}
-            >
-              Quick Links
-            </p>
-            <ul
-              style={{
-                listStyle: "none",
-                display: "flex",
-                flexDirection: "column",
-                gap: 9,
-                padding: 0,
-                margin: 0,
-              }}
-            >
-              {quickLinks.map((l) => (
-                <li key={l.label}>
-                  <Link
-                    to={l.href}
-                    style={{
-                      fontSize: 12,
-                      color: "#666",
-                      textDecoration: "none",
-                      transition: "color 0.15s",
-                    }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = "#111")}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = "#666")}
-                  >
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Policy */}
-          <div>
-            <p
-              style={{
-                fontSize: 13,
-                fontWeight: 700,
-                color: "#111",
-                marginBottom: 14,
-              }}
-            >
-              Our Policy
-            </p>
-            <ul
-              style={{
-                listStyle: "none",
-                display: "flex",
-                flexDirection: "column",
-                gap: 9,
-                padding: 0,
-                margin: 0,
-              }}
-            >
-              {policies.map((l) => (
-                <li key={l.label}>
-                  <Link
-                    to={l.href}
-                    style={{
-                      fontSize: 12,
-                      color: "#666",
-                      textDecoration: "none",
-                      transition: "color 0.15s",
-                    }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = "#111")}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = "#666")}
-                  >
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          
-          <div>
-            <p
-              style={{
-                fontSize: 13,
-                fontWeight: 700,
-                color: "#111",
-                marginBottom: 14,
-              }}
-            >
-              Contact Us
-            </p>
-            {[
-              {
-                Icon: IconLocation,
-                text: "Add: 111B S Gov Avenue, STE 7126 19904 Dover, DE",
-              },
-              {
-                Icon: IconPhone,
-                text: "Tel: +1 (012) 345-6789 - Whatsapp",
-              },
-              {
-                Icon: IconMail,
-                text: "healconscious.com",
-              },
-            ].map(({ Icon, text }) => (
-              <div
-                key={text}
-                style={{
-                  display: "flex",
-                  gap: 8,
-                  alignItems: "flex-start",
-                  marginBottom: 12,
-                }}
-              >
-                <span style={{ color: "#777", marginTop: 2, flexShrink: 0 }}>
-                  <Icon />
-                </span>
-                <span
-                  style={{ fontSize: 12, color: "#666", lineHeight: 1.6 }}
-                >
-                  {text}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        
-        <div
-          style={{
-            borderTop: "0.5px solid #e0ddd8",
-            marginTop: "2rem",
-            paddingTop: "1rem",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            flexWrap: "wrap",
-            gap: 8,
-            flexDirection: isSmallMobile ? "column" : "row",
-            alignItems: isSmallMobile ? "flex-start" : "center",
-          }}
-        >
-          <p style={{ fontSize: 11, color: "#aaa" }}>
-            © 2024-25 Heal Conscious Inc. All Rights Reserved.
-          </p>
-         <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
-  
-  {/* PayPal Image */}
-  <img 
-    src={paymentImg} 
-    alt="Payment Method" 
-    style={{ width: "60px", height: "auto" }} 
-  />
-
-
-</div> 
-        </div>
-      </footer>
+      
     </div>
   );
 }
