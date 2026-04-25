@@ -150,14 +150,14 @@ const HeroSection = () => {
 
       <section className="hero-section">
 
-        {/* Arrow top */}
+      
         <svg className="hero-arrow" style={{ position:"absolute", top:"8%", right:"30%", width:"150px", opacity:0.3, pointerEvents:"none" }}
           viewBox="0 0 180 100" fill="none">
           <path d="M10 85 Q70 5 165 18" stroke="#666" strokeWidth="3" strokeLinecap="round"/>
           <path d="M152 8 L167 20 L153 32" stroke="#666" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
         </svg>
 
-        {/* Arrow bottom */}
+      
         <svg className="hero-arrow" style={{ position:"absolute", bottom:"8%", right:"25%", width:"150px", opacity:0.3, pointerEvents:"none" }}
           viewBox="0 0 180 100" fill="none">
           <path d="M165 15 Q100 75 15 85" stroke="#666" strokeWidth="3" strokeLinecap="round"/>
@@ -166,7 +166,7 @@ const HeroSection = () => {
 
         <div className="hero-inner">
 
-          {/* LEFT TEXT */}
+          
           <div className="hero-text">
             <p className="hero-label">Heal Conscious</p>
             <h1 className="hero-heading">CAREOX – CONNECT</h1>
@@ -176,7 +176,7 @@ const HeroSection = () => {
             </p>
           </div>
 
-          {/* RIGHT IMAGE */}
+        
           <div className="hero-image-wrap">
             <img src={heroImage} alt="Careox Connect" />
           </div>
